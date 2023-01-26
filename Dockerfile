@@ -14,3 +14,17 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 # we excute springboot application in terminal like using these command.
 # " java -jar target/jarfile.jar " example:$ java -jar target/myapplication-0.0.1-SNAPSHOT.jar
 # so same way we are give above line code in ENTRYPOINT ["java","-jar", "jarfile.jar"].
+
+
+
+
+important:  when run docker image(springboot application) using --> docker run image name;  ---> the springboot application sucessfully with portnumber you can see in 
+command prompot. but you can't access it. 
+
+example:
+  we created docker image for springboot application. then we run application in command prompt using --> docker run imagename. Application run suucessfully with port
+  number 5000; you can't access it. you can try it in postman. because our application running docker container. we slove by exchange with portnumber;
+  
+  example docker run -p hostportnumber:portnumber imagename;
+          
+          dokcer run -p 9000:5000 vineshname; // we can access now using 9000 port number  you can try in postman. http://localhost:9000/api/findall.
